@@ -1,0 +1,58 @@
+CS 2200 Summer 2015
+Project 6
+Name: Kaijie Huang
+GT Number: 903076121
+
+Problem 1B
+----------
+
+/* Fix me */
+1 CPU
+# of Context Switches: 99
+Total execution time: 67.6 s
+Total time spent in READY state: 389.9 s
+
+2 CPU
+# of Context Switches: 113
+Total execution time: 35.8 s
+Total time spent in READY state: 83.1 s
+
+4 CPU
+# of Context Switches: 184
+Total execution time: 33.0 s
+Total time spent in READY state: 0.1 s
+
+The total execution time does decrease as the increase in numbers of CPUs. However, there is no linear relationship between these two values. As shown above, the total execution time of 2 CPUS and 4 CPUS are quite similar compared to 1 CPU, which means the improvemence of the performance time comes to a limit as the CPU number increase. Possible reasons include that some processes are not CPU-bound but I/O bound.
+Besides, it is observed that even though time spent in READY state is greatly reduced by the increasing number of CPUs, the context switches increase.
+
+Problem 2B
+----------
+
+/* Fix me */
+800ms
+# of Context Switches: 136
+Total execution time: 67.6 s
+Total time spent in READY state: 228.8 s
+
+600ms
+# of Context Switches: 161
+Total execution time: 67.6 s
+Total time spent in READY state: 182.0 s
+
+400ms
+# of Context Switches: 203
+Total execution time: 67.6 s
+Total time spent in READY state: 134.5 s
+
+200ms
+# of Context Switches: 362
+Total execution time: 67.5 s
+Total time spent in READY state: 71.2 s
+
+The total waiting does reduce with shorter time slice. This is because with a shorter and equal assigned time for each process, it can minimize the convoy effect introduced when a short job comes behind a long one. However, as observed, the context switches also increases greatly. In reality, increase in context switches will result in more overhead of context switches, negatively affecting the overal performance.
+
+Problem 3B
+----------
+
+/* Fix me */
+
