@@ -276,10 +276,10 @@ extern void wake_up(pcb_t *process)
         /* evict the process if found and lower priority than our process */
         if(findIdle == 0 && lowestId != -1) {
             force_preempt(lowestId); 
-            pthread_mutex_lock(&ready_mutex);
-            enqueueFromHead(process);
-            pthread_mutex_unlock(&ready_mutex);
-            return;
+            // pthread_mutex_lock(&ready_mutex);
+            // enqueueFromHead(process);
+            // pthread_mutex_unlock(&ready_mutex);
+            // return;
         }
     }
 
