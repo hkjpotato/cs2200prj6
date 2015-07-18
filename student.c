@@ -4,8 +4,8 @@
  * Summer 2015
  *
  * This file contains the CPU scheduler for the simulation.
- * Name:
- * GTID:
+ * Name:Kaije Huang
+ * GTID:903076121
  */
 
 #include <assert.h>
@@ -88,7 +88,6 @@ pcb_t* dequeue() {
 
 //dequeue from tail
 void enqueueFromHead(pcb_t* newPcb) {
-
     if(head == NULL) {
         head = newPcb;
     } else{

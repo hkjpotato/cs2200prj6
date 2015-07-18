@@ -13,17 +13,21 @@ Total execution time: 67.6 s
 Total time spent in READY state: 389.9 s
 
 2 CPU
-# of Context Switches: 113
+# of Context Switches: 107
 Total execution time: 35.8 s
-Total time spent in READY state: 83.1 s
+Total time spent in READY state: 92.2 s
 
 4 CPU
-# of Context Switches: 184
-Total execution time: 33.0 s
-Total time spent in READY state: 0.1 s
+# of Context Switches: 181
+Total execution time: 33.4 s
+Total time spent in READY state: 0.3 s
 
 The total execution time does decrease as the increase in numbers of CPUs. However, there is no linear relationship between these two values. As shown above, the total execution time of 2 CPUS and 4 CPUS are quite similar compared to 1 CPU, which means the improvemence of the performance time comes to a limit as the CPU number increase. Possible reasons include that some processes are not CPU-bound but I/O bound.
-Besides, it is observed that even though time spent in READY state is greatly reduced by the increasing number of CPUs, the context switches increase.
+
+Besides, it is observed that even though time spent in READY state is greatly reduced by the increasing number of CPUs, the context switches and the related overhead increase.
+
+What's more, according to the Amdahl's law, the speedup of a program using multiple processors in parallel computing is limited by the time needed for the sequential fraction of the program.
+
 
 Problem 2B
 ----------
@@ -55,4 +59,9 @@ Problem 3B
 ----------
 
 /* Fix me */
+With Priority 1 CPU
+# of Context Switches: 152
+Total execution time: 68.2 s
+Total time spent in READY state: 195.7 s
 
+The closest is the the Round-Robin method with a slice around 600ms. Notice that short job first could accommodate preemption at time of new job arrival and/or I/O completion events. The force preempt method will kick out the one with lowest priority, which, in this case, is the one with longest execution time. As a result, the execution time for each process become close to the average, and thus behaves like a round robin approach.
